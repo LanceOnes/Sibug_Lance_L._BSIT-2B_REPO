@@ -1,10 +1,12 @@
 // Declared Variables
 
-var location1 = 3;
-var location2 = 4;
-var location3 = 5;
+var randomLoc = math.floor(Math.random() * 5);
 
-var guess = 0;
+var location1 = randomLoc;
+var location2 = location1 + 1;
+var location3 = location2 + 1;
+
+var guess ;
 var hits = 0;
 var guesses = 0;
 
@@ -17,9 +19,9 @@ var isSunk = false;
 while (isSunk == false){
     guess = prompt("Ready!, Aim!, Fire! (Enter number 0-6) ")
 
-    if (guess <0 || guess >6) {
-        alert("0-6 gane mango2 simo! 🫰 ")
-        
+    if (guess == null) {
+        alert("thank u for playing botchog 🫰 ");
+        break;
     }else{
 
         guesses += 1;
@@ -30,7 +32,7 @@ while (isSunk == false){
 
             if(hits == 3){
                 isSunk = true;
-                alert("Pinatay mo bangka ko!")
+                alert("You Won Botchog! Congrats!")
 
             }
         }else{
@@ -40,6 +42,8 @@ while (isSunk == false){
 
     }
 }
+
+var accuracy = (guesses > 0 ? (hits / guesses) * 100 : 0).toFixed(3);
 
 var stats = "You Sank my Battleships at  " + guesses + guesses + "and your accuracy is " + (3/guesses);
 
